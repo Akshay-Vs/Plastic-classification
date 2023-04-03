@@ -1,0 +1,87 @@
+.container {
+    width: 800px;
+    height: 500px;
+    background-color: #e9eff4;
+    box-shadow: #94acb1 3px 3px 20px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;    
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #97acb1;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-out;
+}
+
+.image-container:hover::before {
+  transform: scaleX(1);
+}
+
+.image-container h2{
+    margin:0;
+    padding:0;
+    font-size:120px;
+    text-transform:uppercase;
+    position:relative;
+    color:#838383;
+  }
+.image-container  h2:before{
+    content:"Upload";
+    position:absolute;
+    color:#97acb1;
+    top:0;
+    left:0;
+    width:0%;
+    overflow:hidden;
+    transition:all 0.5s;
+  }
+
+  /* icon */
+  .upload-button {
+    font-size: 0;
+  }
+  
+  .upload-image {
+    display: inline-block;
+    font-size: 10vw;
+  }
+  
+  .upload-image::after {
+    content: "\A";
+    white-space: pre; 
+  }
+  
+  .upload-image svg {
+      color: #838383;
+      transition: 100ms;
+  }
+    
+  /* hover */
+
+  .image-container:hover svg {
+    color: #97acb1;
+  }
+
+  .image-container:hover h2:before {
+    width: 100%;
+  }
